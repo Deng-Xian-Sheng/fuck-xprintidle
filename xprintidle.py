@@ -26,12 +26,11 @@
 import ctypes
 import ctypes.util
 import sys
-from ctypes import c_int, c_uint, c_ulong, c_void_p, POINTER, Structure
+from ctypes import c_int, c_ulong, c_void_p, POINTER, Structure
 
 # 加载必要的库
 libX11 = ctypes.CDLL(ctypes.util.find_library('X11'))
 libXss = ctypes.CDLL(ctypes.util.find_library('Xss'))
-libXext = ctypes.CDLL(ctypes.util.find_library('Xext'))
 
 # 定义必要的类型和结构体
 class XScreenSaverInfo(Structure):
@@ -95,28 +94,20 @@ def get_x_idletime():
     XFree = libX11.XFree
     XFree.argtypes = [c_void_p]
     XFree.restype = c_int
-
+    
     # 打开显示
     dpy = XOpenDisplay(None)
     if not dpy:
         print("couldn't open display", file=sys.stderr)
         return -1
-
-    # 检查屏幕保护扩展
-    event_base = c_int()
-    error_base = c_int()
-    if not libXss.XScreenSaverQueryExtension(dpy, ctypes.byref(event_base), ctypes.byref(error_base)):
-        print("screen saver extension not supported", file=sys.stderr)
-        XCloseDisplay(dpy)
-        return -1
-
+    
     # 分配屏幕保护信息
     ssi = XScreenSaverAllocInfo()
     if not ssi:
         print("couldn't allocate screen saver info", file=sys.stderr)
         XCloseDisplay(dpy)
         return -1
-
+    
     # 查询空闲时间
     root_window = DefaultRootWindow(dpy)
     if not XScreenSaverQueryInfo(dpy, root_window, ssi):
