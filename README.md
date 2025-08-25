@@ -12,14 +12,13 @@ Especially when you need compatibility and deployment, when others (especially o
 
 Returning to the main topic.
 
-I use DeepSeekR1 and [xprintidle](https://github.com/g0hl1n/xprintidle ）The author's code has written a Python script that implements [xprintidle](https://github.com/g0hl1n/xprintidle ）Same functionality (except for no fixes for old version X services).
+I use DeepSeekR1 and [xprintidle](https://github.com/g0hl1n/xprintidle )The author's code has written a Python script that implements [xprintidle](https://github.com/g0hl1n/xprintidle) Same functionality (except for no fixes for old version X services).
 
 And when it interacts with X11, it doesn't use the Python package xlib, yes, I want 0 dependencies.
 
 It works well on my computer! And it's ready to use out of the box, without the need to install any dependencies.
 
 <img width="1498" height="941" alt="image" src="https://github.com/user-attachments/assets/f303979c-bf6b-4aae-adeb-92a84e3d89ac" />
-
 
 I have conducted preliminary tests using the following command. You can try it. When you operate the keyboard or mouse, the printing time will decrease. If you do not operate for a long time, the time will increase.
 
@@ -29,4 +28,4 @@ while true;  do python3 xprintidle.py -H;  sleep 2;  done
 
 Finally,
 
-Thank you [xprintidle](https://github.com/g0hl1n/xprintidle ）The author, but damn it [xprintidle](https://github.com/g0hl1n/xprintidle )
+Thank you [xprintidle](https://github.com/g0hl1n/xprintidle)The author, but damn it [xprintidle](https://github.com/g0hl1n/xprintidle)
