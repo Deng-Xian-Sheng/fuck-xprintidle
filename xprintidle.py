@@ -1,5 +1,28 @@
 #!/usr/bin/env python3
 
+# SPDX-License-Identifier: GPL-3.0-only
+#
+# This program prints the user's "idle time" to standard output. "Idle time" refers to the number of milliseconds that have passed since the last input signal was received from any input device.
+# If execution fails, the program prints a message to standard error and terminates with a non-zero exit code.
+#
+# Copyright (c) 2005, 2008 Magnus Henoch <henoch@dtek.chalmers.se>
+# Copyright (c) 2006, 2007 Danny Kukawka <dkukawka@suse.de>, <danny.kukawka@web.de>
+# Copyright (c) 2008 Eivind Magnus Hvidevold <hvidevold@gmail.com>
+# Copyright (c) 2014-2022 Richard Leitner <dev@g0hl1n.net>
+# Copyright (c) 2025 CanQi Jin <x17615848429@sina.com>
+#
+# This file is part of the fuck-xprintidle project, which was inspired by the xprintidle project.
+#
+# fuck-xprintidle is free software; you can redistribute it and/or modify it under the terms of version 3 of the GNU General Public License as published by the Free Software Foundation.
+#
+# fuck-xprintidle is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. For more details, please refer to the GNU General Public License.
+#
+# You should have received a copy of the GNU General Public License along with fuck-xprintidle. If not, see <https://www.gnu.org/licenses/>.
+#
+# The function workaroundCreepyXServer was adapted from kpowersave-0.7.3 developed by Eivind Magnus Hvidevold <hvidevold@gmail.com>. kpowersave is licensed solely under version 2 of the GNU GPL.
+#
+# fuck-xprintidle was rewritten in Python by CanQi Jin in 2025 with reference to xprintidle, which was implemented in C.
+
 import ctypes
 import ctypes.util
 import sys
