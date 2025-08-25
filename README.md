@@ -26,6 +26,18 @@ I have conducted preliminary tests using the following command. You can try it. 
 while true;  do python3 xprintidle.py -H;  sleep 2;  done
 ```
 
+# Quick use
+
+```
+# Human-readable print
+python3 xprintidle.py -H
+```
+
+```
+# unit millisecond
+python3 xprintidle.py
+```
+
 Finally,
 
 Thank you [xprintidle](https://github.com/g0hl1n/xprintidle)The author, but damn it [xprintidle](https://github.com/g0hl1n/xprintidle)
